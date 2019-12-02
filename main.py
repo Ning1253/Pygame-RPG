@@ -1,8 +1,9 @@
 # The main file, containing the display and the main loop of the game.
 import pygame
 
-# Initialise Pygame
+# Initialise
 pygame.init()
+running = True
 
 # Main Settings
 FPS = 60
@@ -16,7 +17,7 @@ display = pygame.display.set_mode(screen_size)
 all_sprites = pygame.sprite.Group()
 
 # Main Loop
-while True:
+while running:
     clock.tick(FPS) # Wait for next frame time
     for event in pygame.event.get(): # Get User Inputs
         if event.type == pygame.QUIT: # If the window is closed...
