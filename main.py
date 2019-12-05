@@ -1,5 +1,5 @@
 # The main file, containing the display and the main loop of the game.
-import pygame, inputs
+import pygame, get_inputs
 
 def loop(running, clock, display, FPS, all_sprites):# Main Loop
     while running:
