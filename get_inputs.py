@@ -1,4 +1,5 @@
 # Inputs for frame
+import pygame
 
 global inputs
 
