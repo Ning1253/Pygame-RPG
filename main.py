@@ -5,7 +5,7 @@ def loop(running, clock, display, FPS, all_sprites):# Main Loop
     while running:
         clock.tick(FPS) # Wait for next frame time
         inputs.grab_inputs() # Get User Inputs
-        for event in inputs.inputs:
+        for event in get_inputs.inputs:
             if event.type == pygame.QUIT: # If the window is closed...
                 pygame.quit() # ...Close the Window
     
