@@ -1,5 +1,6 @@
 # File to contain Player and Inventory Classes
 import pygame
+import get_inputs as list_inputs
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -9,4 +10,14 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect() # Player hitbox will be a rectangle around their image
     
     def update(self): # Update function, to be run every frame
-        return True # Empty for now
+        self.get_inputs()
+
+    def get_inputs(self):
+        if list_inputs.keys[pygame.K_w]:
+            self.rect.y -= 1
+        if list_inputs.keys[pygame.K_s]:
+            self.rect.y += 1
+        if list_inputs.keys[pygame.K_a]:
+            self.rect.x -= 1
+        if list_inputs.keys[pygame.K_d]:
+            self.rect.x += 1
