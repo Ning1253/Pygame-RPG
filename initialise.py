@@ -1,5 +1,5 @@
 import pygame
-from Classes import player # All classes (rooms, player, wall, enemies etc.)
+from Classes import player, classes # All classes (rooms, player, wall, enemies etc.)
 from main_loop import loop
 
 # Initialise
