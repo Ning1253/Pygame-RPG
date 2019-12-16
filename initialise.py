@@ -1,7 +1,7 @@
 import pygame
 from Classes import player, classes # All classes (rooms, player, wall, enemies etc.)
 from main_loop import loop
-
+import current_rendered
 # Initialise
 pygame.init()
 running = True
@@ -14,8 +14,5 @@ clock = pygame.time.Clock()
 # Display Setup
 display = pygame.display.set_mode(screen_size)
 
-# Main Groups Setup
-all_sprites = pygame.sprite.Group()
-
 # Main Loop
-loop(running, pygame.time.Clock(), display, FPS, all_sprites)
+loop(running, pygame.time.Clock(), display, FPS, current_rendered.all_sprites)
