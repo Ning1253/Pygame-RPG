@@ -13,7 +13,6 @@ class Player(pygame.sprite.Sprite):
     
     def update(self): # Update function, to be run every frame
         self.get_inputs()
-        self.wall_collision()
         for wall in current_rendered.current_room.walls:
             if pygame.sprite.collide_rect(self, wall):
                 self.wall_collision(wall)
@@ -28,8 +27,7 @@ class Player(pygame.sprite.Sprite):
         if list_inputs.keys[pygame.K_d]:
             self.rect.x += 1
     
-    def wall_collision(self):
-        for wall in current_rendered.current_room.walls:
+    def wall_collision(self, wall):
             if functions.direction_collision(self, wall) == "Up Collision":
                 self.rect.y += 1
             if functions.direction_collision(self, wall) == "Down Collision":
@@ -38,13 +36,3 @@ class Player(pygame.sprite.Sprite):
                 self.rect.x += 1
             if functions.direction_collision(self, wall) == "Right Collision":
                 self.rect.x -= 1
-    
-    def wall_collision(self, wall):
-        if functions.direction_collision(self, wall) == "Up Collision":
-            self.rect.y += 1
-        if functions.direction_collision(self, wall) == "Down Collision":
-            self.rect.y -= 1
-        if functions.direction_collision(self, wall) == "Left Collision":
-            self.rect.x += 1
-        if functions.direction_collision(self, wall) == "Right Collision":
-            self.rect.x -= 1
