@@ -14,11 +14,11 @@ class Room(object): # Default Room class. Actual rooms will be located in a sepe
                  "                ", # a system in which a space indicates
                  "                ", # a square area with no wall (a path or floor)
                  "                ", # and a "W" indicates a wall space. 
-                 "                ", # More tiles will be added as the game 
-                 "                ", # evolves in complexity.
-                 "                ",
-                 "                ", # This is basically a tilemap of size 16*16.
-                 "                ",
+                 "        W       ", # More tiles will be added as the game 
+                 "        W       ", # evolves in complexity.
+                 "      WWWWW     ",
+                 "        W       ", # This is basically a tilemap of size 16*16.
+                 "        W       ",
                  "                ",
                  "                ",
                  "                ",
