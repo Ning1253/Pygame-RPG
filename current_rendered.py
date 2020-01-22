@@ -7,5 +7,6 @@ global current_room
 # to allow access from player and collisions to walls, enemies etc.
 current_room = ""
 current_player = ""
+
 # Main Groups Setup
 all_sprites = pygame.sprite.Group()
