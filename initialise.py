@@ -20,6 +20,7 @@ current_rendered.current_room = room
 for wall in room.walls:
     current_rendered.all_sprites.add(wall)
 player = player.Player()
+current_rendered.current_player = player
 current_rendered.all_sprites.add(player)
 
 # Main Loop
