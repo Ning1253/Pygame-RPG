@@ -1,5 +1,6 @@
 import pygame
 from Classes import classes
+import current_rendered
 
 def create_wall(xpos, ypos, room): # Wall Generation
     wall = classes.Wall(xpos, ypos)
