@@ -12,15 +12,15 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect() # Player hitbox will be a rectangle around their image
     
     def update(self): # Update function, to be run every frame
-        self.get_inputs()
-        for wall in current_rendered.current_room.walls:
-            if pygame.sprite.collide_rect(self, wall):
-                self.wall_collision(wall)
+        self.get_inputs() # Get inputs
+        for wall in current_rendered.current_room.walls: # Check direction collision for each wall
+            if pygame.sprite.collide_rect(self, wall):   # Only if there is actually a collision ongoing
+                self.wall_collision(wall) # Doing this therefore reduces lag
         
     def get_inputs(self):
-        if list_inputs.keys[pygame.K_w]:
-            self.rect.y -= 1
-        if list_inputs.keys[pygame.K_s]:
+        if list_inputs.keys[pygame.K_w]: # If pressing "w"
+            self.rect.y -= 1 # Move Up
+        if list_inputs.keys[pygame.K_s]: # Same for other "asd" below
             self.rect.y += 1
         if list_inputs.keys[pygame.K_a]:
             self.rect.x -= 1
@@ -28,9 +28,9 @@ class Player(pygame.sprite.Sprite):
             self.rect.x += 1
     
     def wall_collision(self, wall):
-            if functions.direction_collision(self, wall) == "Up Collision":
-                self.rect.y += 1
-            if functions.direction_collision(self, wall) == "Down Collision":
+            if functions.direction_collision(self, wall) == "Up Collision": # If Up Collision returned,
+                self.rect.y += 1 # Move down out of the collision
+            if functions.direction_collision(self, wall) == "Down Collision": # Same for other collisions below
                 self.rect.y -= 1
             if functions.direction_collision(self, wall) == "Left Collision":
                 self.rect.x += 1

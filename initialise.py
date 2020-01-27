@@ -15,4 +15,4 @@ clock = pygame.time.Clock()
 display = pygame.display.set_mode(screen_size)
 
 # Main Loop
-loop(running, pygame.time.Clock(), display, FPS, current_rendered.all_sprites)
+loop(running, pygame.time.Clock(), display, FPS)
