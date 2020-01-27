@@ -30,8 +30,22 @@ class Room(object): # Default Room class. Actual rooms will be located in a sepe
     
     def update(self):
         for exit in self.exits:
-            if functions.check_roomswitch(self, current_rendered.current_player, exit) != None: # Check to see if should switch rooms
-                functions.change_room(Classes.room_map.room_map[1])
+            check = functions.check_roomswitch(self, current_rendered.current_player, exit)
+            if  check == None: # Check to see if should switch rooms
+                pass
+            elif check == "Up":
+                current_rendered.current_player.rect.y = 479
+                functions.change_room(Classes.room_map.room_map[Classes.room_map.room_map.index(self) - 5])
+            elif check == "Down":
+                current_rendered.current_player.rect.y = 0
+                functions.change_room(Classes.room_map.room_map[Classes.room_map.room_map.index(self) + 5])
+            elif check == "Left":
+                current_rendered.current_player.rect.x = 479
+                functions.change_room(Classes.room_map.room_map[Classes.room_map.room_map.index(self) - 1])
+            elif check == "Right":
+                current_rendered.current_player.rect.x = 0
+                functions.change_room(Classes.room_map.room_map[Classes.room_map.room_map.index(self) + 1])
+
 
 class Wall(pygame.sprite.Sprite): # Default Wall class. To be used in rooms, dungeons etc.
     def __init__(self, xpos, ypos): # Init

@@ -33,7 +33,13 @@ def change_room(room):
     current_rendered.all_sprites.add(current_rendered.current_player) # Add player to render
 
 def check_roomswitch(room, player, exit):
-    
     if (player.rect.x >= exit[0][0] and player.rect.x <= exit[1][0]) and (player.rect.y >= exit[0][1] and player.rect.y <= exit[1][1]):
-        return room.exits.index(exit)
+        if exit[0][1] == 0 and exit[1][1] == 0:
+            return "Up"
+        elif exit[0][1] == 480 and exit [1][1] == 480:
+            return "Down"
+        elif exit[0][0] == 0 and exit[1][0] == 0:
+            return "Left"
+        elif exit[0][0] == 480 and exit[1][0] == 480:
+            return "Right"
         

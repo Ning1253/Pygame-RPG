@@ -16,6 +16,7 @@ display = pygame.display.set_mode(screen_size)
 
 #Test Stuff
 current_rendered.current_player = player.Player() # Create Player
+current_rendered.current_player.rect.center = (150, 200)
 current_rendered.current_room = room_map.room_map[0] # Add "room1" to the display
 current_rendered.all_sprites.add(current_rendered.current_player) # Add player to all sprites
 

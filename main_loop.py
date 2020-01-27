@@ -11,10 +11,10 @@ def loop(running, clock, display, FPS):# Main Loop
     
         # Update all sprites
         current_rendered.all_sprites.update()
-        #try:
-        current_rendered.current_room.update() # Update Room if has function
-        #except:
-        #    pass # If not, do nothing
+        try:
+            current_rendered.current_room.update() # Update Room if has function
+        except:
+            pass # If not, do nothing
 
 
         # Display Refreshing
