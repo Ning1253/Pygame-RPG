@@ -1,26 +1,26 @@
 import pygame
-from Classes import classes
+import Classes.classes as classes
 import current_rendered
 from Functions import functions
 
 class room1(classes.Room):
     def __init__(self):
-        self.level = ["        E       ", # The room layout will be designed using
+        self.level = ["      EEEEE     ", # The room layout will be designed using
                       "                ", # a system in which a space indicates
                       "                ", # a square area with no wall (a path or floor)
                       "                ", # and a "W" indicates a wall space. 
                       "                ", # More tiles will be added as the game 
-                      "       W        ", # evolves in complexity.
-                      "       W        ",
-                      "     WWWWW      ", # This is basically a tilemap of size 16*16.
-                      "       W        ",
-                      "       W        ",
+                      "E      W        ", # evolves in complexity.
+                      "E      W       E",
+                      "E    WWWWW     E", # This is basically a tilemap of size 16*16.
+                      "E      W       E",
+                      "E      W       E",
+                      "E              E",
                       "                ",
                       "                ",
                       "                ",
                       "                ",
-                      "                ",
-                      "                "]
+                      "       EEEE     "]
         super().__init__()
 
 

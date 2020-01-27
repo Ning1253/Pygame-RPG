@@ -1,5 +1,5 @@
 import pygame
-from Classes import player, classes, rooms # All classes (rooms, player, wall, enemies etc.)
+from Classes import player, classes, room_map # All classes (rooms, player, wall, enemies etc.)
 from main_loop import loop
 import current_rendered
 # Initialise
@@ -16,7 +16,7 @@ display = pygame.display.set_mode(screen_size)
 
 #Test Stuff
 current_rendered.current_player = player.Player() # Create Player
-current_rendered.current_room = rooms.room1() # Add "room1" to the display
+current_rendered.current_room = room_map.room_map[0] # Add "room1" to the display
 current_rendered.all_sprites.add(current_rendered.current_player) # Add player to all sprites
 
 for wall in current_rendered.current_room.walls:
